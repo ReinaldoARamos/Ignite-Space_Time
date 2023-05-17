@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsx src/server.ts"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +12,7 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "@types/node": "^20.1.7"
+    "@types/node": "^20.1.7",
+    "tsx": "^3.12.7"
   }
 }
