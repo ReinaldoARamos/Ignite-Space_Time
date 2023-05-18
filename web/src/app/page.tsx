@@ -31,12 +31,31 @@ export default function Home() {
             <h1 className="mt-4 text-5xl font-bold leading-tight text-gray-50">
               Sua cápsula do tempo
             </h1>
-            <p>
+            <p className="text-lg leading-relaxed">
               colecione momentos e lembranças e (se quiser) compartilhe com o
               mundo!
             </p>
           </div>
-          <a href="">CADASTRAR LEMBRANÇA</a>
+          <a
+            href=""
+            className="inline-block cursor-pointer rounded-full bg-green-500 px-5 py-3 font-alt text-sm uppercase leading-none text-black transition-colors hover:bg-green-600"
+          >
+            CADASTRAR LEMBRANÇA
+          </a>
+        </div>
+
+        {/* COPY* */}
+        <div className="text-sm leading-relaxed text-gray-200">
+          Feito com 💟 pela{' '}
+          <a
+            className="hover: text-gray-100 underline"
+            href="https://www.rocketseat.com.br/?utm_source=google&utm_medium=cpc&utm_campaign=lead&utm_term=perpetuo&utm_content=institucional-lead-home-texto-lead-brandkws-none-none-institucional-none-none-br-google&gclid=Cj0KCQjwmZejBhC_ARIsAGhCqndTMACDOtB4tJ2QduU3p1N8LzkJmPBbUNcyQs2LjhBQFYSbg_PW1gcaAg7QEALw_wcB"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Rocketseat
+          </a>
+          🚀
         </div>
       </div>
 
