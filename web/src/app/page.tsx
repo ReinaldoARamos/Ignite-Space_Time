@@ -1,4 +1,5 @@
 import { Copyright } from '@/components/copyright'
+import { EmptyMemories } from '@/components/emptyMemories'
 import { Hero } from '@/components/hero'
 import { SignIn } from '@/components/signIn'
 export default function Home() {
@@ -10,25 +11,13 @@ export default function Home() {
         <div className=" absolute right-0  top-1/2 h-[288px] w-[526px] -translate-y-1/2 translate-x-1/2  rounded-full bg-purple-700 opacity-50 blur-full" />
 
         <div className="absolute bottom-0 right-2 top-0 w-2 bg-stripe" />
-        {/* user**/}
         <SignIn />
-        {/* HERO */}
+
         <Hero />
-        {/* COPY* */}
+
         <Copyright />
       </div>
-
-      {/* Right**/}
-      <div className="flex flex-col bg-[url(../assets/bg-stars.svg)] bg-cover p-16">
-        <div className="flex flex-1 items-center justify-center">
-          <p className="w-[360px] text-center leading-relaxed">
-            Você ainda não registou nenhum lembrança , comece a{' '}
-            <a href="" className="underline hover:text-gray-50">
-              criar agora!
-            </a>
-          </p>
-        </div>
-      </div>
+      <EmptyMemories />
     </main>
   )
 }
