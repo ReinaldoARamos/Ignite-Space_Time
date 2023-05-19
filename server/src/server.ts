@@ -1,7 +1,7 @@
 import fastify from "fastify";
 import cors  from '@fastify/cors'
 import { memoriesRoutes } from "./routes/memories";
-import  'dotenv/config'
+//import  'dotenv/config'
 import { AuthRoutes } from "./routes/auth";
 
  const app = fastify()

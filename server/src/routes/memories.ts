@@ -2,6 +2,7 @@ import { FastifyInstance } from "fastify";
 import { prisma } from "../lib/prisma";
 import { z } from "zod";
 import { request } from "http";
+import { randomUUID } from "crypto";
 
 export async function memoriesRoutes(app: FastifyInstance) {
   app.get("/memories", async () => {
@@ -37,7 +38,7 @@ export async function memoriesRoutes(app: FastifyInstance) {
 
   app.post("/memories", async (request) => {
     const bodySchema = z.object({
-      contents: z.string().uuid(),
+      contents: z.string(),
       isPublic: z.coerce.boolean().default(false),
       coverUrl: z.string(),
     });
@@ -49,7 +50,7 @@ export async function memoriesRoutes(app: FastifyInstance) {
         contents,
         coverUrl,
         isPublic,
-        userId: "71dc4a79-36f2-40c4-a4f5-a81ae5093046",
+        userId: "71dc4a79-36f2-40c4-a4f5-a81ae5093046"
       },
     });
 
