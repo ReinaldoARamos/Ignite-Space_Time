@@ -11,7 +11,7 @@ export async function AuthRoutes(app: FastifyInstance) {
             const {code} = bodySchema.parse(request.body)
 
             const acessCodeToken = await axios.post(
-                'https://github.com/login/oauth/acess_token',
+                'https://github.com/login/oauth/access_token',
                 null,
                 {
                      params: {
