@@ -18,6 +18,7 @@
     "@fastify/cors": "^8.2.1",
     "@prisma/client": "^4.14.1",
     "@types/node": "^20.1.7",
+    "axios": "^1.4.0",
     "fastify": "^4.17.0",
     "tsx": "^3.12.7",
     "zod": "^3.21.4"
