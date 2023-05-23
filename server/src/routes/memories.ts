@@ -5,7 +5,8 @@ import { request } from "http";
 import { randomUUID } from "crypto";
 
 export async function memoriesRoutes(app: FastifyInstance) {
-  app.get("/memories", async () => {
+  app.get("/memories", async (request) => {
+    await request.jwtVerify();
     const memories = await prisma.memory.findMany({
       orderBy: {
         created_at: "asc",
