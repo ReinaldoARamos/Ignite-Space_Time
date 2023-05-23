@@ -108,14 +108,25 @@ export async function memoriesRoutes(app: FastifyInstance) {
     return memory;
   });
 
-  app.delete("/memories/:id", async (request) => {
+  app.delete("/memories/:id", async (request, reply) => {
     const ParamsSchema = z.object({
       id: z.string().uuid(),
     });
 
     const { id } = ParamsSchema.parse(request.params);
 
-    const memory = await prisma.memory.delete({
+    
+    let memory = await prisma.memory.findUniqueOrThrow({
+      where: {
+        id, 
+      }
+    })
+
+    if (memory.userId != request.user.sub){
+      return reply.status(401).send()
+    } 
+
+     memory = await prisma.memory.delete({
       where: {
         id,
       },
