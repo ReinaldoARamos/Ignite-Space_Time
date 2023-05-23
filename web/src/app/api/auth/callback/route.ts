@@ -1,5 +1,5 @@
 import { api } from '@/lib/api'
-import { NextRequest } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
@@ -10,5 +10,11 @@ export async function GET(request: NextRequest) {
 
   const { token } = registerResponse.data
 
-  console.log(token)
+  const redirectUrl = new URL('/', request.url)
+
+  return NextResponse.redirect(redirectUrl, {
+    headers: {
+      'Set-Cookie': `token=${token}; Path=/;`,
+    },
+  })
 }
