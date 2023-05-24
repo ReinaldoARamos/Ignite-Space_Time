@@ -10,7 +10,6 @@ import { SignIn } from '@/components/signIn'
 
 import { cookies } from 'next/headers'
 import { Copyright } from '@/components/copyright'
-import { EmptyMemories } from '@/components/emptyMemories'
 
 const roboto = Roboto({ subsets: ['latin'], variable: '--font-roboto' })
 const baijamjuree = BaiJunjamjuree({
@@ -31,7 +30,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body
         className={`${roboto.variable}  ${baijamjuree.variable}  bg-gray-900 font-sans text-gray-100`}
       >
-        {children}
         <main className="grid min-h-screen grid-cols-2 bg-[url(../assets/bg-stars.svg)] bg-cover">
           {/* left**/}
           <div className=" relative flex flex-col items-start justify-between overflow-hidden border-r border-white/10 px-28 py-16 ">
@@ -45,7 +43,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
             <Copyright />
           </div>
-          <EmptyMemories />
+          {children}
         </main>
       </body>
     </html>
