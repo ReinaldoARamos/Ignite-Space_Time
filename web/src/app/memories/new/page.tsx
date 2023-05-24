@@ -31,7 +31,7 @@ export default function NewMemory() {
               id="isPublic"
               name="isPublic"
               value={'true'}
-              className=""
+              className="h-4 w-4 rounded border-gray-400 bg-gray-700 text-purple-500"
             />
             tornar memória pública
           </label>
