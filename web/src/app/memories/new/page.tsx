@@ -1,3 +1,43 @@
-export default function name() {
-  return <h1>New</h1>
+import { Camera, ChevronLeft } from 'lucide-react'
+import Link from 'next/link'
+
+export default function NewMemory() {
+  return (
+    <div className="ml-16 mt-16 flex flex-1 flex-col gap-4">
+      <Link
+        href={'/'}
+        className="flex items-center gap-1 text-sm text-gray-200 hover:text-gray-100"
+      >
+        <ChevronLeft className="h-4 w-4" />
+        Voltar à Timeline
+      </Link>
+
+      <form className="flex flex-1 flex-col gap-2">
+        <div className="flex items-center gap-4">
+          <label
+            htmlFor="media"
+            className="flex cursor-pointer gap-1.5 text-sm text-gray-200 hover:text-gray-100"
+          >
+            <Camera className="flex h-4 w-4 items-center" />
+            Anexar Mídia
+          </label>
+
+          <label
+            htmlFor="isPublic"
+            className="flex items-center gap-1.5 text-sm text-gray-200 hover:text-gray-100"
+          >
+            <input
+              type="checkbox"
+              id="isPublic"
+              name="isPublic"
+              value={'true'}
+              className=""
+            />
+            tornar memória pública
+          </label>
+        </div>
+        <input type="file" id="media" className="invisible" />
+      </form>
+    </div>
+  )
 }
