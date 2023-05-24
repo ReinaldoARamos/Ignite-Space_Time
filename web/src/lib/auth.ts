@@ -3,7 +3,7 @@ import decode from 'jwt-decode'
 interface User {
   sub: string
   name: string
-  avatarUrl: string
+  avatar_url: string
 }
 export function getUser(): User {
   const token = cookies().get('token')?.value
