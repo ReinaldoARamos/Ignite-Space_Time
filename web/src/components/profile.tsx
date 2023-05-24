@@ -17,8 +17,13 @@ export function Profile() {
       />
       <span className="text-small max-w-[170px] leading-snug">
         <span>{name}</span>
-        <p className="cursor-pointer text-red-400 transition-colors hover:text-red-300">
-          Quero sair
+        <p>
+          <a
+            href="/api/auth/logout"
+            className="cursor-pointer text-red-400 transition-colors hover:text-red-300"
+          >
+            Quero sair
+          </a>
         </p>
       </span>
     </div>
