@@ -4,8 +4,11 @@ import { memoriesRoutes } from "./routes/memories";
 //import  'dotenv/config',
 import jwt from '@fastify/jwt' //um token gerado que na verdade é um JSON criptogragado 
 import { AuthRoutes } from "./routes/auth";
+import multipart from "@fastify/multipart";
+import { UploadRoutes } from "./routes/upload";
 
  const app = fastify()
+ app.register(multipart )
  app.register(cors, {
    origin: true  //serve para que quando há valores como boolean ele consiga interpretar
  })
@@ -17,6 +20,7 @@ import { AuthRoutes } from "./routes/auth";
 
  
 app.register(memoriesRoutes)
+app.register(UploadRoutes)
 app.register(AuthRoutes)
  app.listen({
     
