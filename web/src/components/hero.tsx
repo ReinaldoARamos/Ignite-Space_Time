@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import NwlLogos from '../assets/nwlLogo.svg'
+import Link from 'next/link'
 
 export function Hero() {
   return (
@@ -13,12 +14,12 @@ export function Hero() {
           colecione momentos e lembranças e (se quiser) compartilhe com o mundo!
         </p>
       </div>
-      <a
-        href=""
+      <Link
+        href={'http://localhost:3000/memories/new'}
         className="inline-block cursor-pointer rounded-full bg-green-500 px-5 py-3 font-alt text-sm uppercase leading-none text-black transition-colors hover:bg-green-600"
       >
         CADASTRAR LEMBRANÇA
-      </a>
+      </Link>
     </div>
   )
 }
