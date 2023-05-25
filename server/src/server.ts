@@ -6,9 +6,14 @@ import jwt from '@fastify/jwt' //um token gerado que na verdade é um JSON cript
 import { AuthRoutes } from "./routes/auth";
 import multipart from "@fastify/multipart";
 import { UploadRoutes } from "./routes/upload";
+import { resolve } from "node:path";
 
  const app = fastify()
  app.register(multipart)
+ app.register(require('@fastify/static') , {
+   root: resolve(__dirname, '../upload'),
+   prefix: '/upload/',
+ })
  app.register(cors, {
    origin: true  //serve para que quando há valores como boolean ele consiga interpretar
  })
