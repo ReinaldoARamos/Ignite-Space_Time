@@ -27,7 +27,6 @@ export default function NewMemory() {
             htmlFor="isPublic"
             className="flex items-center gap-1.5 text-sm text-gray-200 hover:text-gray-100"
           >
-            <MediaPicker />
             <input
               type="checkbox"
               id="isPublic"
@@ -38,7 +37,7 @@ export default function NewMemory() {
             tornar memória pública
           </label>
         </div>
-
+        <MediaPicker />
         <textarea
           name="content"
           spellCheck={false}
