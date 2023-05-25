@@ -8,7 +8,7 @@ import multipart from "@fastify/multipart";
 import { UploadRoutes } from "./routes/upload";
 
  const app = fastify()
- app.register(multipart )
+ app.register(multipart)
  app.register(cors, {
    origin: true  //serve para que quando há valores como boolean ele consiga interpretar
  })
