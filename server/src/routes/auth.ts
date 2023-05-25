@@ -8,7 +8,7 @@ export async function AuthRoutes(app: FastifyInstance) {
       code: z.string(),
     });
 
-    const { code } = bodySchema.parse(request.body);
+    const { code } = bodySchema.parse(request.body);  //esse code é o gerado na hora que o user loga
 
     const acessCodeToken = await axios.post(
       "https://github.com/login/oauth/access_token",
@@ -24,12 +24,14 @@ export async function AuthRoutes(app: FastifyInstance) {
         },
       }
     );
+    //código recebido da oauth do github, onde ele gera um acess_token, o code gerado completa a URL, fazendo
+    //com que o login seja feito
 
     const { access_token } = acessCodeToken.data;
 
     const userResponse = await axios.get("http://api.github.com/user", {
       headers: {
-        Authorization: `Bearer ${access_token}`,
+        Authorization: `Bearer ${access_token}`, //get de infos do user via acess token
       },
     });
 
@@ -54,6 +56,7 @@ export async function AuthRoutes(app: FastifyInstance) {
                 avatarUrl: userInfo.avatar_url,
                 login: userInfo.login,
                 name: userInfo.name,
+                //caso nao haja user ele cria
                 
             }
         })
@@ -70,4 +73,5 @@ export async function AuthRoutes(app: FastifyInstance) {
       token,
     };
   });
+  //coleta de dados do user pelo token
 }

@@ -19,3 +19,5 @@ export async function GET(request: NextRequest) {
     },
   })
 }
+
+// faz o registro e salva dentro do cookie

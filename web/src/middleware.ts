@@ -12,3 +12,5 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: '/memories/:path*',
 }
+
+// Nao permite usuário acecessar páginas caso nao haja token(deslogado)
