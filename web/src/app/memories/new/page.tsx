@@ -1,3 +1,4 @@
+import { MediaPicker } from '@/components/mediaPicker'
 import { Camera, ChevronLeft } from 'lucide-react'
 import Link from 'next/link'
 
@@ -26,6 +27,7 @@ export default function NewMemory() {
             htmlFor="isPublic"
             className="flex items-center gap-1.5 text-sm text-gray-200 hover:text-gray-100"
           >
+            <MediaPicker />
             <input
               type="checkbox"
               id="isPublic"
@@ -36,7 +38,7 @@ export default function NewMemory() {
             tornar memória pública
           </label>
         </div>
-        <input type="file" id="media" className="invisible h-0 w-0" />
+
         <textarea
           name="content"
           spellCheck={false}
