@@ -1,7 +1,7 @@
 import { EmptyMemories } from '@/components/emptyMemories'
 import { api } from '@/lib/api'
 import { cookies } from 'next/headers'
-
+// a
 export default async function Home() {
   const isAuthenticated = cookies().has('token')
 
